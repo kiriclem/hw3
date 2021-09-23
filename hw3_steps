@@ -1,0 +1,13 @@
+1. create list that contains info about each page (in a separate dict)
+
+2. combine top and bottom template files into one file (base.html)
+
+3. insert placeholder text into base.html where the content of the page will go
+
+4. create for loop that will loop through each dict in the pages list and build the page
+	i)	open base.html
+	ii) open current page content file
+	iii) replace placeholder in base.html with page content
+	iv)  save page in docs folder with correct page name
+
+
