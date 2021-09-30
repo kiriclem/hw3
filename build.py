@@ -21,16 +21,22 @@ pages = [
 	}
 ]
 
-def apply_template():
-	for page in pages:
-		template = open('templates/base.html').read()
-		page_content = open(page['filename']).read()
-		fin_page = template.replace('{{content}}', page_content)
-		return fin_page
-		
+def apply_template(content):
+	template = open('templates/base.html').read()
+	result = template.replace('{{content}}', content)
+	return result
+
+def apply_title(title):	
+	template = open('templates/base.html').read()
+	result = template.replace('{{title}}', title)
+	return result				
+	
 def main():
 	for page in pages:
-		fin_page = apply_template()
+		content = open(page['filename']).read()
+		title = page['title']
+		fin_page = apply_template(content)
+#		fin_page = apply_title(title)
 		open(page['output'], 'w+').write(fin_page)
 
 main()
